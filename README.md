@@ -35,6 +35,20 @@ This is a simple application to be used in the technical test of DevOps.
 - Applied Docker caching optimizations (`--no-cache-dir`).
 - run out of time for deployment to EKS with IaC definition ussing terraform
 
+## screenshots
+
+![Screenshot 2025-04-29 at 11 45 56 AM](https://github.com/user-attachments/assets/b0e33b76-32f9-4676-9d29-13cb04a35d0a)
+
+<img width="356" alt="Screenshot 2025-04-29 at 11 46 30 AM" src="https://github.com/user-attachments/assets/468a8bd4-2f47-4e82-ae62-3112beab5f01" />
+
+![Screenshot 2025-04-28 at 11 33 49 PM](https://github.com/user-attachments/assets/b3ff55f7-39d5-481f-b9c0-058743e8250a)
+![Screenshot 2025-04-29 at 12 52 41 AM](https://github.com/user-attachments/assets/b18dfb16-199f-4250-b00c-6bdfa3d4ddf9)
+
+![Screenshot 2025-04-29 at 1 55 52 AM](https://github.com/user-attachments/assets/fe69dcdc-65d5-402b-a5c6-b4e947b08ad6)
+![Screenshot 2025-04-29 at 10 57 08 AM](https://github.com/user-attachments/assets/13b9a8b3-4eb8-4fa9-8b6c-62c87a5736cc)
+![Screenshot 2025-04-29 at 11 26 27 AM](https://github.com/user-attachments/assets/8d3a043d-1112-4fd9-b053-8cdc8ebb83ce)
+![Screenshot 2025-04-29 at 11 24 19 AM](https://github.com/user-attachments/assets/151f323f-69a2-4706-acf1-7cb88cdef116)
+
 
 ## Getting Started
 
