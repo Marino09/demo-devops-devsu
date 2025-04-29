@@ -8,6 +8,7 @@ This is a simple application to be used in the technical test of DevOps.
 - Used official `python:3.11-slim` image to keep the container lightweight and secure.
 - Installed dependencies via `requirements.txt`.
 - Set `PYTHONDONTWRITEBYTECODE` and `PYTHONUNBUFFERED` for optimal Docker behavior.
+- multi stage build wasn't necessary 
 
 ## Database Storage
 - SQLite was chosen because the project scope indicated local persistence.
@@ -22,6 +23,7 @@ This is a simple application to be used in the technical test of DevOps.
   - Code linting (flake8)
   - Unit tests and coverage reporting
   - Docker image building and pushing
+  - No deployment to k8s was defined, because I used a local minikube cluster(common steps here involve a connection to the remote cluster and change of k8s manifests)
 
 ## Security
 - Environment variables were used for parametrized values.(we don't have any sensitive values here.
@@ -31,7 +33,7 @@ This is a simple application to be used in the technical test of DevOps.
 ## Best Practices
 - Split manifests: `k8s/` directory holds deployment and service separately.
 - Applied Docker caching optimizations (`--no-cache-dir`).
-- run out of time for deployment to EKS with IaC definition ussing terraform()
+- run out of time for deployment to EKS with IaC definition ussing terraform
 
 
 ## Getting Started
