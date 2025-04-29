@@ -2,6 +2,38 @@
 
 This is a simple application to be used in the technical test of DevOps.
 
+# Technical Decisions Explained
+
+## Dockerization
+- Used official `python:3.11-slim` image to keep the container lightweight and secure.
+- Installed dependencies via `requirements.txt`.
+- Set `PYTHONDONTWRITEBYTECODE` and `PYTHONUNBUFFERED` for optimal Docker behavior.
+
+## Database Storage
+- SQLite was chosen because the project scope indicated local persistence.
+- To ensure database availability across pod restarts, an `emptyDir` Kubernetes volume was mounted specifically at `/app/db`.
+
+## Kubernetes Deployment
+- Readiness and liveness probes were configured targeting `/api/users/` endpoint to ensure pod health.
+- Environment variables were used to make settings flexible (`DATABASE_NAME`, `DJANGO_ALLOWED_HOSTS`).
+
+## CI/CD
+- GitHub Actions pipelines were created to automate:
+  - Code linting (flake8)
+  - Unit tests and coverage reporting
+  - Docker image building and pushing
+
+## Security
+- Environment variables were used for parametrized values.(we don't have any sensitive values here.
+- For prod ready apps we need to utilize secrets to protect senssitive data, but secrets only provide base64 obfuscation, so the correct approach is a truly encrypted option like hasicorp Vault or helm secrets
+- ALLOWED_HOSTS in Django was managed dynamically using environment settings.
+
+## Best Practices
+- Split manifests: `k8s/` directory holds deployment and service separately.
+- Applied Docker caching optimizations (`--no-cache-dir`).
+- run out of time for deployment to EKS with IaC definition ussing terraform()
+
+
 ## Getting Started
 
 ### Prerequisites
