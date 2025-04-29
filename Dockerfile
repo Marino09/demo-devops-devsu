@@ -1,17 +1,21 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+# env vars
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8000
 
-# dependencies
+# user & group non root
+RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
+
+WORKDIR /app
 COPY requirements.txt .
+
 RUN pip install --no-cache-dir --progress-bar off -r requirements.txt
 
 COPY . .
 
-# env vars
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-ENV PORT=8000
+USER appuser
 
 EXPOSE 8000
 
